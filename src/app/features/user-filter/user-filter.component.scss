@@ -1,0 +1,40 @@
+@use 'variables' as *;
+
+.user-filter {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  padding: .5rem 2rem;
+  gap: 1rem;
+
+  &__left {
+    display: flex;
+    gap: 1rem;
+  }
+
+  &__field {
+    min-width: 21rem;
+
+    .mat-form-field-wrapper {
+      padding-bottom: 0 !important;
+    }
+    .mat-form-field-flex {
+      align-items: center;
+    }
+    .mat-mdc-form-field-subscript-wrapper {
+      display: none;
+    }
+  }
+  
+  .user-filter__button {
+    background-color: $color-button-background;
+    color: $color-title-text;
+  }
+  
+  &__button {
+    box-shadow: none;
+    height: 3.5rem;
+    padding: 0 32px;
+    border-radius: 4px;
+  }
+}

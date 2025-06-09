@@ -1,0 +1,62 @@
+<h2 mat-dialog-title>{{ isEditMode ? 'Editar Usuario' : 'Crear Usuario' }}</h2>
+
+<mat-dialog-content>
+  <div class="form-container">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Usuario</mat-label>
+        <input matInput formControlName="usuario" />
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" />
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="half-width">
+        <mat-label>Primer Nombre</mat-label>
+        <input matInput formControlName="primerNombre" />
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="half-width">
+        <mat-label>Segundo Nombre</mat-label>
+        <input matInput formControlName="segundoNombre" />
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="half-width">
+        <mat-label>Primer Apellido</mat-label>
+        <input matInput formControlName="primerApellido" />
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="half-width">
+        <mat-label>Segundo Apellido</mat-label>
+        <input matInput formControlName="segundoApellido" />
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Departamento</mat-label>
+        <mat-select formControlName="idDepartamento">
+          <mat-option *ngFor="let dept of departamentos" [value]="dept.id">
+            {{ dept.nombre }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Cargo</mat-label>
+        <mat-select formControlName="idCargo">
+          <mat-option *ngFor="let cargo of cargos" [value]="cargo.id">
+            {{ cargo.nombre }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-dialog-actions align="end">
+        <button mat-button type="button" (click)="onCancel()">Cancelar</button>
+        <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">
+          {{ isEditMode ? 'Actualizar' : 'Crear' }}
+        </button>
+      </mat-dialog-actions>
+    </form>
+  </div>
+</mat-dialog-content>

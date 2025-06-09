@@ -1,0 +1,77 @@
+@use 'variables' as *;
+
+.user-table {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  margin: 1.5rem 2rem;
+
+  .mat-elevation-z8 {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+  }
+
+  .mat-mdc-table {
+    background-color: #fff;
+    width: 100%;
+  }
+
+  ::ng-deep .mat-mdc-cell,
+  ::ng-deep .mat-mdc-header-cell {
+    font-size: 14px;
+    padding: 1.2rem 2rem;
+    color: $color-title-text;
+    border-bottom: 1px solid #e0e0e0;
+  }
+
+  ::ng-deep .mat-mdc-header-cell {
+    font-weight: 550;
+    text-align: center;
+  }
+
+  .action-btn {
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    background: none;
+    box-shadow: none;
+    border: 1px solid transparent;
+  }
+
+  .edit-btn {
+    box-sizing: border-box;
+    color: $color-edit-text;
+  }
+
+  .delete-btn {
+    box-sizing: border-box;
+    color: $color-delete-text;
+  }
+
+  .edit-btn:hover {
+    background-color: $color-edit-hover;
+    border: 1px solid $color-edit-text;
+  }
+
+  .delete-btn:hover {
+    background-color: $color-delete-hover;
+    border: 1px solid $color-delete-text;
+  }
+
+  .table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+
+    .mat-elevation-z8 {
+      min-width: 800px;
+    }
+  }
+
+  .action-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.25rem;
+    flex-wrap: nowrap;
+  }
+}

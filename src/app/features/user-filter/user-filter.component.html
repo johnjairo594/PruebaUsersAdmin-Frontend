@@ -1,0 +1,27 @@
+<div class="user-filter">
+  <div class="user-filter__left">
+    <mat-form-field appearance="fill" class="user-filter__field">
+      <mat-label>Seleccione un Departamento</mat-label>
+      <mat-select [(ngModel)]="selectedDepartamento" (selectionChange)="onFilterChange()">
+        <mat-option [value]="0">Todos</mat-option>
+        <mat-option *ngFor="let dept of departamentos" [value]="dept.id">{{ dept.nombre }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="user-filter__field">
+      <mat-label>Seleccione un Cargo</mat-label>
+      <mat-select [(ngModel)]="selectedCargo" (selectionChange)="onFilterChange()">
+        <mat-option [value]="0">Todos</mat-option>
+        <mat-option *ngFor="let cargo of cargos" [value]="cargo.id">{{ cargo.nombre }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+  </div>
+
+  <div class="user-filter__right">
+    <button mat-raised-button class="user-filter__button" (click)="openCreateUserDialog()">
+      Crear nuevo usuario
+    </button>
+  </div>
+</div>
+<mat-divider></mat-divider>

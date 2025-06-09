@@ -1,0 +1,32 @@
+.form-container {
+  display: flex;
+  justify-content: center;
+}
+
+form {
+  width: 100%;
+  max-width: 600px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem 2rem;
+}
+
+h2 {
+    padding-bottom: 1.5rem;
+}
+
+.full-width {
+  width: 100%;
+  grid-column: span 2;
+}
+
+.half-width {
+  grid-column: span 1;
+}
+
+mat-dialog-actions {
+  grid-column: span 2;
+  margin-top: 0;
+  padding: 0;
+  padding-bottom: 2rem;
+}
