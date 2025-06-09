@@ -63,18 +63,18 @@ export class UserService {
       params = params.set('idCargo', filters.idCargo.toString());
     }
 
-    return this.http.get<{ data: RawUser[]; total: number }>(this.apiUrl, { params });
+    return this.http.get<{ data: RawUser[]; total: number }>(`${this.apiUrl}/users`, { params });
   }
 
   deleteUser(id: number): Observable<any> {
-    return this.http.delete(`${this.apiUrl}/${id}`);
+    return this.http.delete(`${this.apiUrl}/users/${id}`);
   }
 
   createUser(userData: any): Observable<any> {
-    return this.http.post(this.apiUrl, userData);
+    return this.http.post(`${this.apiUrl}/users`, userData);
   }
 
   updateUser(id: number, userData: any): Observable<any> {
-    return this.http.put(`${this.apiUrl}/${id}`, userData);
+    return this.http.put(`${this.apiUrl}/users/${id}`, userData);
   }
 }
